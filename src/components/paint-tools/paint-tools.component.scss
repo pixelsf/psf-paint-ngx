@@ -1,0 +1,133 @@
+@import "../../variables.scss";
+:host {
+    width: 216px;
+    position: relative;
+}
+.paint-tool {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    width: 200px;
+    overflow: hidden;
+    background: $color-primary;
+    border: 4px solid $color-primary-dark;
+    border-radius: 40px 40px 32px 32px;
+    box-shadow: $box-shadow,
+}
+.paint-toolbar {
+    padding: 0 0 8px;
+}
+.tool-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 32px;
+    padding: 4px;
+    background-color: #fff;
+}
+.tool-btn {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    transition-duration: 200ms;
+    i {
+        display: block;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 40px;
+        height: 40px;
+        background-size: 100% 100%;
+        transition-duration: 200ms;
+        &:active {
+            transform: scale3D(1.1, 1.1, 1);
+        }
+    }
+    &[activated=true] {
+        background-color: #e0e0e0;
+    }
+    &.btn-brush i{
+        background-image: url("../../assets/img/paint-button-brush.png");
+    }
+    &.btn-brush[activated=true] i{
+        background-image: url("../../assets/img/paint-button-brush-activated.png");
+    }
+    &.btn-eraser i{
+        background-image: url("../../assets/img/paint-button-eraser.png");
+    }
+    &.btn-eraser[activated=true] i{
+        background-image: url("../../assets/img/paint-button-eraser-activated.png");
+    }
+    &.btn-save i{
+        background-image: url("../../assets/img/paint-button-save.png");
+    }
+    &.btn-clear i{
+        background-image: url("../../assets/img/paint-button-clear.png");
+    }
+}
+.brush-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    width: 56px;
+    height: 56px;
+    span {
+        display: block;
+        background-color: #fff;
+        background-size: 32px 32px;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        box-sizing: content-box;
+        background-clip: content-box;
+        box-shadow: $box-shadow-inset;
+        transition-duration: 200ms;
+        transition-property: background-color;
+        pointer-events: none;
+    }
+}
+.brush-range {
+    margin-top: 8px;
+    padding: 0 12px;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.palette {
+    overflow: hidden;
+    padding: 8px 0;
+    background-color: #fff;
+    border-radius: 24px;
+    .palette-colors {
+        padding: 8px;
+        margin: 0 !important;
+        // display: flex;
+        // flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .palette-color {
+            padding: 0;
+            // padding: 0 0 0 8px;
+            text-align: center;
+            transition: 200ms;
+            &:active {
+                transform: translateY(-2px) scale3D(1.1, 1.1, 1);
+            }
+            div {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
+                border: 4px solid #fff;
+                box-sizing: border-box;
+                box-shadow: $box-shadow-inset;
+            }
+        }
+    }
+}

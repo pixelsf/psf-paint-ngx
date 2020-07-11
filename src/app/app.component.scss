@@ -1,0 +1,19 @@
+.app-content {
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 1200px;
+}
+
+app-paint-tools {
+    padding: 0 8px;
+    flex: 0 0 256px;
+    z-index: 10;
+}
+
+app-paint-canvas {
+    flex: 1 1 720px;
+}

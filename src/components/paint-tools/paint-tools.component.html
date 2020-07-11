@@ -1,0 +1,22 @@
+<div class="paint-tool">
+    <div class="paint-toolbar">
+      <div class="tool-btns">
+        <div class="tool-btn btn-brush" [attr.activated]="toolMode === 'brush'" (click)="setToolMode(0)"><i></i></div>
+        <div class="tool-btn btn-eraser" [attr.activated]="toolMode === 'eraser'" (click)="setToolMode(1)"><i></i></div>
+        <div class="brush-style" (wheel)="whellToChangetBrushSize($event)" (mouseover)="brushStateBackup()" (mouseout)="brushStateUpdate()"><span [ngStyle]="brushStyle" [style.background-image]="brushImgStyle"></span></div>
+        <div class="tool-btn btn-clear" (click)="clearCanvas()"><i></i></div>
+        <div class="tool-btn btn-save" (click)="savePainting()"><i></i></div>
+      </div>
+      <!-- <div class="brush-range">
+        <ion-range min="8" max="32" [ngModel]="brushSize" (ngModelChange)="setBrushSize($event)" color="deeporange">
+        </ion-range>
+      </div> -->
+    </div>
+    <div class="palette">
+      <div class="palette-colors row">
+        <div class="palette-color col-4" *ngFor="let palettecolor of palettecolors">
+          <div [style.background-color]="palettecolor" (click)="setToolMode(0, palettecolor)"></div>
+        </div>
+      </div>
+    </div>
+</div>

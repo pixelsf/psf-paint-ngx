@@ -1,0 +1,52 @@
+@import "../../variables.scss";
+:host {
+    position: relative;
+}
+$canvas-size: 720px;
+.canvas-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $canvas-size;
+    height: $canvas-size;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.canvas-border {
+    $border-size: 40px;
+    position: absolute;
+    top: - $border-size;
+    left: - $border-size;
+    bottom: - $border-size;
+    right: - $border-size;
+    background-color: $color-primary;
+    border: 4px solid $color-primary-dark;
+    border-radius: 4px 24px 4px 24px;
+    box-shadow: $box-shadow;
+    z-index: 0;
+    transform: rotate(0.75deg);
+}
+
+.canvas-background {
+    $background-border-size: 12px;
+    position: absolute;
+    top: -$background-border-size;
+    left: -$background-border-size;
+    bottom: -$background-border-size;
+    right: -$background-border-size;
+    background-color: rgba(white, 0.35);
+    transform: rotate(-1deg);
+}
+
+.canvas-element {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 10;
+}
