@@ -1,3 +1,4 @@
+@import "../variables.scss";
 .app-content {
     height: 100vh;
     margin-left: auto;
@@ -5,7 +6,7 @@
     display: flex;
     justify-content: space-around;
     align-items: stretch;
-    width: 1200px;
+    max-width: 1024px;
 }
 
 app-paint-tools {
@@ -15,5 +16,5 @@ app-paint-tools {
 }
 
 app-paint-canvas {
-    flex: 1 1 720px;
+    flex: 1 1 $canvas-size;
 }
